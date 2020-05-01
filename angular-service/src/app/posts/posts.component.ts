@@ -6,19 +6,17 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
-
-
 export class PostsComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
-
-  getPosts(){
-    this.http.get('').subscribe(data=>{
-      console.log(data);
-    });
-  }
-
-  ngOnInit(): void {
-  }
+    constructor(private http:HttpClient) { }
+  
+    getPosts(){
+      this.http.get('/getPosts').subscribe(data=>{
+        console.log(data);
+      });
+    }
+  
+    ngOnInit(): void {
+    }
 
 }

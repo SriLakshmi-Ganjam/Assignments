@@ -1,7 +1,9 @@
-<div class="col-md-4 float-left" *ngFor = 'let product of products'>
+<div class="alert alert-success" *ngIf='message'{{message}}></div>
+<div class="col-md-4 mt-4">
+<ng-container *ngFor='let product of products'>
     <div class="card">
         <div class="card-body">
-            <img [src]="product.productImageURL" alt="" width = "100%">
+            <img [src]="product.producturl" alt="Image Not Available" width = "100%">
             <p>{{product.productName}}</p>
             <p>{{product.productDescription}}</p>
             <button class="btn btn-outline-primary" (click) = 'selectProduct(product)'>Update</button>
@@ -9,4 +11,5 @@
             
         </div>
     </div>
+</ng-container>
 </div>

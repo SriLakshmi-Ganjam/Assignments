@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http'
     providedIn:'root'
     })
 export class ProductService {
-
-    myURL = 'http://localhost:8080/angularproject/';
+   
+    myURL = 'http://localhost:8080/angularproject/'
     constructor(private http:HttpClient) {
 
      }
@@ -15,11 +15,10 @@ export class ProductService {
      getData(){
          return this.http.get<any>(`${this.myURL}getAllProducts`);
      }
-     deleteData(product){
-         return this.http.delete<any>(`${this.myURL}deletePro/${product.productId}`)
+     deleteData(product) {
+         return this.http.delete<any>(`{this.myURL}deleteProducts/${product.id}`);
      }
      updateData(product){
-        return this.http.put<any>(`{this.myURL}updateProduct/${product.productId}`,product);
-    }
-
+         return this.http.put<any>(`{this.myURL}updateProduct/${product.id}`,product);
+     }
 }

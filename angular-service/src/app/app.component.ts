@@ -8,8 +8,7 @@ import { ProductService } from './product.service';
 })
 export class AppComponent {
   title = 'angular-service';
-
-  constructor(public productService : ProductService){
-    // console.log(this.productService.products);
+  constructor(public ProductService:ProductService) {
+    
   }
 }
